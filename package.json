@@ -1,0 +1,17 @@
+{
+  "name": "cnp",
+  "version": "1.0.0",
+  "description": "Smart Network Monitoring and Intrusion Detection System",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "systeminformation": "^5.25.11"
+  }
+}

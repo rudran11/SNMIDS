@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNMIDS - Network Monitoring</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">SNMIDS</div>
+        <ul class="nav-links">
+            <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li class="dropdown">
+                <a href="#" class="active"><i class="fas fa-tools"></i> Features <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="network.html" class="active">Network Monitoring</a></li>
+                    <li><a href="intrusion.html">Intrusion Detection</a></li>
+                    <li><a href="alerts.html">Alerts & Notifications</a></li>
+                    <li><a href="dashboard.html">User Dashboard</a></li>
+                    <li><a href="security.html">Security Integration</a></li>
+                </ul>
+            </li>
+            <li><a href="../docs.html"><i class="fas fa-book"></i> Documentation</a></li>
+            <li><a href="../about.html"><i class="fas fa-info-circle"></i> About</a></li>
+        </ul>
+        <button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button>
+    </div>
+
+    <div class="main-content">
+        <header class="header">
+            <h1 class="animate__animated animate__fadeInDown">Network Monitoring</h1>
+            <p class="lead animate__animated animate__fadeInUp animate__delay-1s">Real-time insights into network performance.</p>
+        </header>
+
+        <section class="container py-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-header">Performance Metrics</div>
+                        <div class="card-body" id="performance-metrics"></div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-header">Real-Time Traffic</div>
+                        <div class="card-body">
+                            <div class="chart-container"><canvas id="traffic-chart"></canvas></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">Device Monitoring</div>
+                        <div class="card-body" id="device-monitoring"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>© 2025 SNMIDS. All rights reserved. | Developed by Balavignesh R</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html>

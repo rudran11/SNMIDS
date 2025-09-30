@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNMIDS - Smart Network Monitoring & Intrusion Detection System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script>
+        window.Chart || document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"><\/script>');
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-gradient shadow-sm fixed-top">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand fw-bold" href="#">SNMIDS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#docs">Documentation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item">
+                        <button id="theme-toggle" class="btn btn-outline-light btn-sm ms-2">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Toast Container for Real-Time Alerts -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1050;"></div>
+
+    <section id="home" class="hero-section d-flex align-items-center text-center">
+        <div class="container">
+            <h1 class="display-3 fw-bold text-gradient animate__animated animate__fadeInDown">Smart Network Monitoring & Intrusion Detection System</h1>
+            <p class="lead text-muted animate__animated animate__fadeInUp animate__delay-1s">A cutting-edge solution for real-time network security and performance monitoring</p>
+            <a href="#features" class="btn btn-primary cta-button animate__animated animate__fadeInUp animate__delay-2s">Explore Features</a>
+        </div>
+    </section>
+
+    <section id="features" class="container py-5">
+        <h2 class="text-center fw-bold mb-5 animate__animated animate__fadeIn">Core Features</h2>
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-4 col-lg-3">
+                <div class="card feature-card shadow-lg" onclick="showSubMenu('network')">
+                    <div class="card-body text-center">
+                        <i class="fas fa-network-wired fa-3x mb-3 icon-gradient"></i>
+                        <h5 class="card-title fw-semibold">Network Monitoring</h5>
+                        <p class="card-text text-muted small">Real-time insights into network performance</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+                <div class="card feature-card shadow-lg" onclick="showSubMenu('intrusion')">
+                    <div class="card-body text-center">
+                        <i class="fas fa-shield-alt fa-3x mb-3 icon-gradient"></i>
+                        <h5 class="card-title fw-semibold">Intrusion Detection</h5>
+                        <p class="card-text text-muted small">Advanced threat detection and analysis</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+                <div class="card feature-card shadow-lg" onclick="showSubMenu('alerts')">
+                    <div class="card-body text-center">
+                        <i class="fas fa-bell fa-3x mb-3 icon-gradient"></i>
+                        <h5 class="card-title fw-semibold">Alerts & Notifications</h5>
+                        <p class="card-text text-muted small">Instant alerts for critical events</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+                <div class="card feature-card shadow-lg" onclick="showSubMenu('dashboard')">
+                    <div class="card-body text-center">
+                        <i class="fas fa-chart-line fa-3x mb-3 icon-gradient"></i>
+                        <h5 class="card-title fw-semibold">User Dashboard</h5>
+                        <p class="card-text text-muted small">Interactive and customizable interface</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+                <div class="card feature-card shadow-lg" onclick="showSubMenu('security')">
+                    <div class="card-body text-center">
+                        <i class="fas fa-lock fa-3x mb-3 icon-gradient"></i>
+                        <h5 class="card-title fw-semibold">Security Integration</h5>
+                        <p class="card-text text-muted small">Seamless security protocol integration</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-12">
+                <div id="submenu" class="submenu text-center shadow-sm"></div>
+                <div id="content" class="content mt-4 p-4 rounded"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="bg-dark text-white py-5">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-4">About SNMIDS</h2>
+            <p class="text-center mx-auto" style="max-width: 800px;">SNMIDS is a 2nd-year project designed to provide enterprises with advanced network monitoring and intrusion detection capabilities. Built with cutting-edge technology, it ensures security and performance optimization.</p>
+        </div>
+    </section>
+
+    <footer class="bg-gradient text-center text-white py-4">
+        <div class="container">
+            <p class="mb-1">© 2025 SNMIDS. All rights reserved.</p>
+            <p class="mb-0 small">Developed by [Your Name] | 4th Year Project</p>
+            <div class="social-links mt-3">
+                <a href="#" class="text-white mx-2"><i class="fab fa-github"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" class="btn btn-primary rounded-circle"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
